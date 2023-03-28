@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 10;
+        var vat = 0.2;
+        var tax = 10 * vat;
+        var tax2 = 10 * vat;
+        var tax3 = 10 * vat;
+        var tax4 = 10 * vat;
+        var tax5 = 10 * vat;
+
+         
+        // 특정 기능을 수행하도록 작성된 코드 블럭
+        // 계속 반복해서 작성해야하는 구문들을, 함수를 이용하여 한 문장으로 편안하게 여러번 호출할 수 있다
+        // 코드 변경에도 용이 >> 한 함수만 바뀌면 호출되었던 모든 부분이 변경되게 된다
+        // function name() {
+        //     //코드
+        // }
+        // name();
+
+        function calculateText(profit){
+            var vat = 0.1;
+            var tax = profit * 0.1;
+            console.log(tax);
+
+            return tax;
+        }
+        var tax = calculateText(10);
+        console.log(tax);
+
+        function calculator(x1, y1, operator) {
+            if(operator == "+") {
+                return x1 + y1;
+            } else if(operator == "-") {
+                return x1 - y1;
+            }
+        }
+
+        var plus = calculator(5, 7, "+");
+        console.log(plus);
+        
+        var minus = calculator(5, 7, "-");
+        console.log(minus);
+
+
+    </script>
+</body>
+</html>

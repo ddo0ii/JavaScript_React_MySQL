@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if
+        var age = 19;
+        if(age > 18){
+            console.log("당신은 성인입니다.");
+        } else {
+            console.log("당신은 성인이 아닙니다.");
+        }
+        var isAdult = true;
+        if(age > 18) {
+            isAdult = true;
+            console.log(isAdult);
+        }
+
+        var hour = 14;
+        if(hour < 10){
+            console.log("Good morning");
+        } else if(hour < 18) {
+            console.log("Good afternoon");
+        } else if(hour < 21) {
+            console.log("Good evening");
+        } else {
+            console.log("Good night");
+        }
+
+        // switch
+        var d = new Date();
+        var day = d.getDay();
+        console.log(day);
+        var dayName = "";
+        switch (day) {
+            case 0:
+                dayName = "일요일";
+                break;
+            case 1:
+                dayName = "월요일";
+                break;
+            case 2:
+                dayName = "화요일";
+                break;
+            case 3:
+                dayName = "수요일";
+                break;
+            default:
+                dayName = "__";
+                break;
+        }
+        console.log(dayName);
+    </script>
+</body>
+</html>

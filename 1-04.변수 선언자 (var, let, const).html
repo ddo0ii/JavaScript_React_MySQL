@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 선언자
+        // 재선언 가능 > 재선언 하여도 에러가 나지 않는다
+        var x = 5;
+        var y = 6;
+        var z = x + y; //11
+        console.log("x", x);
+        console.log("y", y);
+        console.log("z", z);
+
+        var x = 7; // 재선언
+        z = x + y; // 이미 선언된 변수에 새로운 값을 할당
+        console.log("x", x);
+        console.log("y", y);
+        console.log("z", z);
+
+        // let 선언자
+        // 재선언 불가능 > 재선언시 SyntaxError가 남
+        // let없이는 재선언 가능
+        let x1 = 5;
+        let y1 = 6;
+        let z1 = x1 + y1;
+        // 아래와 같이 선언을 다시한다면, 아래와 같이 에러문구가 나타나게 된다.
+        // Uncaught SyntaxError: Identifier 'x1' has already been declared (at 1-04.변수 선언자 (var, let, const).html:28:13)
+        // let x1 = 7;
+        // 하지만 아래와 같이 let없이는 재선언이 가능하다.
+        x1 = 7;
+
+        // const 선언자        
+        // 재선언 불가능 > 재선언시 SyntaxError가 남
+        // const 없이는 재선언 가능
+        const PI = 3.14;
+        // const PI = 2.12;
+        PI = 2.12;
+    </script>
+</body>
+</html>

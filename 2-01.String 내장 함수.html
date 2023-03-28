@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // length
+        // 그냥 갯수
+        var txt = "ABCDEFGHIJKLMN";
+        console.log(txt.length); //14
+
+        // indexOf
+        // 첫번째 문자를 0번째로 인식하고, 그 문자열의 첫번째 자리의 숫자를 반환
+        // 없으면 -1 반환
+        // 글자가 있는지 없는지에 대해서 많이 사용
+        var str = "Please locate where 'locate'";
+        console.log(str.indexOf("locate")); // 7 >> P가 0부터 시작함
+        console.log(str.indexOf("ddo")); // -1
+
+        if(str.indexOf("locate")> -1) {
+            console.log("locate 문자 발견!");
+        }
+
+
+        // lastIndexOf
+        // 마지막것을 찾는다!
+        // 반복되는 값이 있을 텐데 반복되는 그 값 중 가장 마지막 문자열의 첫번째 자리의 숫자를 반환
+        console.log(str.lastIndexOf("locate")); // 21 
+        var str1 = "ss is 'ss'";
+        console.log(str1.lastIndexOf("ss"));
+
+
+        // search
+        console.log(str.search("locate")); // 7
+
+        
+        // 저는 이게 많이 혼돈스릅습니다..ㅎㅎ
+        // slice
+        // 첫번째 문자를 0으로 인지하고,
+        // 5번째 문자를 인지하여
+        // 마지막 7전까지 출력하면 됨 (6 index까지만 떼어 오면 됨)    
+        var str = "사과바나다키위레몬";
+        console.log("slice ----------------");    
+        console.log(str.slice(5,7)); // 키위
+        // 뒤에가 없으면 끝까지 다 출력
+        console.log(str.slice(5)); // 키위레몬
+        // 맨 뒤가 -1이다
+        console.log(str.slice(-1)); // 레
+        console.log(str.slice(-2, -1)); // 몬
+        // 뒤에 모두
+        console.log(str.slice(-2)); // 레몬
+        // 뒤에서 6번째 인것에서 뒤에서 5번재까지
+        console.log(str.slice(-6, -4)); // 나다
+
+
+
+        // substring
+        // - 일 경우에는 전체를 출력하지만
+        // -인 두개의 함수는 출력하지않는다.
+        var str = "사과바나다키위레몬";
+        console.log("substring ----------------");
+        console.log(str.substring(5,7)); // 키위
+        console.log(str.substring(5)); // 키위레몬
+        console.log(str.substring(-1)); // 사과바나다키위레몬
+        console.log(str.substring(-2, -1)); // 없네여?
+        console.log(str.substring(-2)); //사과바나다키위레몬
+        console.log(str.substring(-6, -4)); // 없네여?  
+        // 첫번째 인자가 -인 경우에는 처음부터 출력하고, 두번째 인자는 갯수를 나타냄
+        console.log(str.substring(-2, 4)); // 사과바나
+
+        
+
+        // substr
+        // 0부터 시작, 5번째 시작부터,
+        // 두번째 인자는 갯수를 나타냄
+        // -인 경우 뒤에서 부터이고 끝까지 출력
+        // - 두개의 인자를 받지는 않음
+        var str = "사과바나다키위레몬";
+        console.log("substr ----------------");
+        console.log(str.substr(5,3)); // 키위레
+        console.log(str.substr(5)); // 키위레몬
+        console.log(str.substr(-1)); // 몬
+        console.log(str.substr(-2, -1)); // 없네여?
+        console.log(str.substr(-2)); //레몬
+        console.log(str.substr(-6, -4)); // 없네여?  
+        console.log(str.substr(-6, 4)); // 나다키위
+
+        var birthday = "970527";
+        console.log(birthday.substr(0,2)); //97
+        console.log(birthday.substr(2,2)); //05
+
+        var birthday = "1997-05-27";
+        console.log(birthday.substring(0, birthday.indexOf("-"))); // 1997 >> 0부터 -가 있는 곳까지
+
+
+        // replace
+        // 처음것만 변경된다
+        var str = "Please visit here!";
+        var str2 = str.replace("here", "there");
+        console.log(str2);
+
+        var str = "Please visit here here here!";
+        var str2 = str.replace("here", "there");
+        console.log(str2);
+        
+        // 아래와 같이 적용한다면, 전체를 변경 가능하다
+        var str = "Please visit here here here!";
+        var str2 = str.replace(/here/g, "there");
+        console.log(str2);
+
+        // 대문자는 바뀌지않는다.
+        var str = "Please visit here HERE here!";
+        var str2 = str.replace(/here/g, "there");
+        console.log(str2);
+        
+        // i를 이용하여 대문자도 적용하면된다
+        var str = "Please visit here HERE here!";
+        var str2 = str.replace(/here/gi, "there");
+        console.log(str2);
+
+        
+        // toUpperCase, toLowerCase
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+
+
+        // concat
+        var txt1 = "Hello";
+        var txt2 = "World";
+        var txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+        var txt4 = txt1.concat(" ", txt2);
+        console.log(txt4);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- https://github.com/axios/axios -- 여기서 가져옴 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        //Promise
+        // 서버 호출 해서 데이터를 받아오는 함수
+        // 서버로부터 받아올때까지 데이터를 기다려주겠다는 약속
+        var url = "";
+        var data = axios.get(url).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        });
+
+        // promise
+        function getData() {
+            return new Promise(function (resolve, reject) {
+                axios.get(url).then(function (response) {
+                    console.log(response.data);
+                    resolve(response.data);
+                });
+            });
+        }
+
+        // async, await
+        async function getData2(path) {
+            return (await axios.get(path)).data;
+        }
+        // 위에서 async/await를 썼기에 여기도 await를 써야한다
+        // 근데 await는 async함수 내에서 써야하기 때문에
+        // 이 함수를 async 함수 안에 넣는것!
+        async function calculateSum() {
+            var data = await getData2(url);
+            var total = 0;
+            for (var item of data) {
+                total += item.price;
+            }
+            console.log(total);
+        }
+        // 근데 얘는 async await안써도 되는이유는?
+        // 기다릴 필요가 없기 때문! 
+        calculateSum();
+
+        // var total = 0;
+        // getData().then(function (data) {
+        //     for (var item of data) {
+        //         total += item.price;
+        //     }
+        //     console.log(total);
+        // });
+    </script>
+</body>
+
+</html>

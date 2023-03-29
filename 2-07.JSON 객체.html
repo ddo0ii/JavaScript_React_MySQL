@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JSON
+        // 서버로부터 웹페이지로 데이터를 전송할 때 자주 사용
+        // 데이터를웹 페이지에서 서버로 데이터를 전송할 때도 json 포맷 자주 사용
+        // json - JavaScript Object Notation의 약자
+        var data = {
+            "employees": [
+                {"firstName":"John", "lastName":"Doe"},
+                {"firstName":"John", "lastName":"Doe"},
+                {"firstName":"John", "lastName":"Doe"},
+                {"firstName":"John", "lastName":"Doe"},
+            ]
+        }
+        var text = '{"employees": ['+
+                '{"firstName":"John", "lastName":"Doe"},'+
+                '{"firstName":"Anna", "lastName":"Smith"},'+
+                '{"firstName":"Peter", "lastName":"Jones"},'+
+                '{"firstName":"Paul", "lastName":"Sophie"} ]}';
+
+        // JSON.parse
+        var obj = JSON.parse(text);
+        console.log(obj); //obj로 변하게 됨
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+
+        // JSON.stringify
+        console.log(data); //obj로 변하게 됨
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+        // {firstName: 'John', lastName: 'Doe'}
+        console.log(JSON.stringify(data)); // 문자열로 변환되어 저장
+        // {"employees":[{"firstName":"John","lastName":"Doe"},{"firstName":"John","lastName":"Doe"},{"firstName":"John","lastName":"Doe"},{"firstName":"John","lastName":"Doe"}]}
+
+    </script>
+</body>
+</html>

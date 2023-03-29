@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = true;; 
+        var y = new Boolean(true);
+        console.log(x==y); // true
+        console.log(x===y); // false
+        console.log(typeof x); // boolean
+        console.log(typeof y); // object
+
+        console.log(Boolean(10>9));
+        console.log(10>9);
+
+        var x = 0;
+        console.log(x); // 0
+        console.log(Boolean(x)); // false
+
+        
+        var x = 1;
+        console.log(x); // 1
+        console.log(Boolean(x)); // true
+
+        
+        var x = "";
+        console.log(x); // 
+        console.log(Boolean(x)); // false
+
+        
+        var x22;
+        console.log(x22); // undefined
+        console.log(Boolean(x22)); // false
+    </script>
+</body>
+</html>

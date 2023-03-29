@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Number
+        var x = 123;
+        // toString();
+        console.log(x.toString()); // 123
+        console.log(x.toString(2)); // 1111011 >> 2진수로
+
+
+        // toFixed();
+        // 지정된 소수점 자리수까지 반올림으로 표기
+        var x = 126846.54846513;
+        console.log(x.toFixed(2)); //126846.55
+
+
+        // toPrecision();
+        // 수의 길이를 제한, 그냥 처음부터 끝까지 숫자 갯수 세면 된다
+        // 반올림
+        var x = 9.565;
+        console.log(x.toPrecision(3)); // 9.6
+        var x = 69.565;
+        console.log(x.toPrecision(3)); // 69.6
+
+
+        var x = Number("10");
+        console.log(x); // 숫자 10
+        var x = Number(true);
+        console.log(x); // 1
+        var x = Number("       10          "); // 여전히 숫자 10
+        var x = Number("       100.33     "); // 여전히 숫자 100.33
+        var x = Number("       100,33  "); // NaN
+        var x = Number("       dodo  "); // NaN
+        var x = Number("       10  20   "); // NaN
+
+
+
+        // parseInt
+        // 정수로 바꿈
+        console.log(parseInt("3"));
+        console.log(parseInt("3.14"));
+        
+        console.log(parseInt("10 333")); // 10
+        console.log(parseInt("10 years")); // 10
+        console.log(parseInt("years 12")); // NaN
+        
+        // parseFloat
+        console.log(parseFloat("10")); //10
+        console.log(parseFloat("13.9")); //13.9 
+        console.log(parseFloat("13.9 aa"));//13.9 
+        console.log(parseFloat("aa 13.9")); //NaN
+
+    </script>
+</body>
+</html>

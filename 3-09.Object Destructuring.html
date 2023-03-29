@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getPerson() {
+            return {
+                firstName: "John",
+                lastName: "Doe",
+                age: 37,
+                email: "john@gmail.com",
+                city: "New York",
+                country:"USA"
+            };
+        }
+
+        var person = getPerson();
+        console.log(person); // {firstName: 'John', lastName: 'Doe', age: 37, email: 'john@gmail.com', city: 'New York', …}
+        console.log(person.firstName);
+
+
+
+        
+
+        // 위와 같이 해도 되지만, 내가 받고 싶은 키만 넣어서 하면 되기도 한다
+        var {firstName, lastName} = getPerson();
+        console.log(firstName);
+        console.log(lastName);
+        
+    </script>
+</body>
+</html>

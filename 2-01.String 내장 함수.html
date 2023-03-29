@@ -130,10 +130,40 @@
         var txt2 = "World";
         var txt3 = txt1 + " " + txt2;
         console.log(txt3);
-        var txt4 = txt1.concat(" ", txt2);
+        var txt4 = txt1.concat(" ", txt2).concat(" ", txt2);
         console.log(txt4);
 
 
+        // trim
+        // 앞 뒤의 공백을 없애줌
+        var str = "     Hello World!         ";
+        console.log(str);
+        console.log(str.trim());
+        
+
+
+        // padStart
+        // 첫번째 인자 갯수만큼, 두번째 인자로 채움
+        // 네글자로 만드는데 0으로 채운다
+        var str = "5";
+        console.log(str.padStart(4, 0));
+        console.log(str.padStart(5, "안녕"));
+
+
+        // padEnd
+        console.log(str.padEnd(4, 0));
+
+
+        // charAt
+        // 원하는 위치의 문자를 가지고 옴
+        var str = "Hello World";
+        console.log(str.charAt(6));
+
+
+        // split
+        var tags = "키보드,기계식,블루투스";
+        var arr = tags.split(",");
+        console.log(arr);
     </script>
 </body>
 </html>

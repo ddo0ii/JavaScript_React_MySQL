@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello(){
+            console.log("Hello World");
+            return "Hello World";
+        }
+
+        var hello = function hello(){
+            console.log("Hello World");
+            return "Hello World";
+        }
+
+        var hello = () => {
+            console.log("Hello World");
+            return "Hello World"
+        }
+
+        var hello = () => "HelloWorld";
+
+        var hello = (fullName, lastName) => "HelloWorld" + fullName + lastName;
+        console.log(hello("권소영", "또또")); //HelloWorld권소영또또
+
+        
+        var hello = fullName => "HelloWorld" + fullName
+        console.log(hello("권소영")); //HelloWorld권소영
+    </script>
+</body>
+</html>

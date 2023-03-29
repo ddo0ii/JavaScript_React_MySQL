@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // scope는 변수에 대한 접근성을 의미
+
+        // local scope
+        function myFunction() {
+            var carName = "현대";
+            console.log(carName); //function안에서만 선언가능
+        }
+        myFunction();
+        // console.log(carName); //function안에서만 선언가능 >> 그래서 얘는 에러남
+
+        // global scope
+        var carName2="기아";
+        myFunction2(); // 얘가 위에 있어도 에러가 나지 않는다!!!!
+        function myFunction2(){
+            console.log(carName2); //출력
+        }
+        console.log(carName2); //출력
+
+        // myFunction3(); //얘는 에러가 난다.
+        // 함수를 변수로 해석하게 된다면, 아래의 함수가 줄에 와야지 함수 해석을 하기 때문에!
+        var myFunction3 = function() {
+            console.log(carName2);
+        }
+        
+        myFunction3();
+    </script>
+</body>
+</html>

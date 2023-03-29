@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- https://github.com/axios/axios -- 여기서 가져옴 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        //Promise
+        // 서버 호출 해서 데이터를 받아오는 함수
+        // 서버로부터 받아올때까지 데이터를 기다려주겠다는 약속
+        var url = "";
+        var data = axios.get(url).then(function (response) {
+            console.log(response.data);
+            return response.data;
+        });
+
+        function getData() {
+            // promise
+            return new Promise(function (resolve, reject) {
+                axios.get(url).then(function (response) {
+                    console.log(response.data);
+                    resolve(response.data);
+                });
+            });
+        }
+
+        var total = 0;
+        getData().then(function (data) {
+            for (var item of data) {
+                total += item.price;
+            }
+            console.log(total);
+        });
+    </script>
+</body>
+
+</html>

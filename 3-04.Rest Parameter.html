@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(x1, x2){
+            var y = x1 + x2;
+            console.log(y);
+            return y;
+        }
+        sum(5,7);
+        
+        // 하나를 더 더하고싶으면 아래와 같이 계속 더해줘야한다 >> 귀찮음...
+        function sum(x1, x2, x3){
+            var y = x1 + x2 +x3;
+            console.log(y);
+            return y;
+        }
+        sum(5,7,3);
+
+
+        // for of
+        // ...과 args를 이용하여 다 불러올 수 있다.
+        function sum(...args){
+            var total = 0;
+            for(var x of args){
+                total += x;
+            }
+            console.log(total);
+            return total;
+        }
+        sum(5,7,3);
+        sum(5,7,3,5,5,6,7);
+
+
+
+        // forEach
+        function sum(...args){
+            var total = 0;
+            // for(var x of args){
+            //     total += x;
+            // }
+            args.forEach(function(x){
+                total += x;
+            })
+            console.log(total);
+            return total;
+        }
+        sum(5,7,3);
+        sum(5,7,3,5,5,6,7);
+
+
+
+        // 인덱스는 아래와 같이 기입
+        function sum(...args){
+            var total = 0;
+            // for(var x of args){
+            //     total += x;
+            // }
+            args.forEach(function(x, index){
+                console.log(index);
+                total += x;
+            })
+            console.log(total);
+            return total;
+        }
+        sum(5,7,3);
+        sum(5,7,3,5,5,6,7);
+    </script>
+</body>
+</html>

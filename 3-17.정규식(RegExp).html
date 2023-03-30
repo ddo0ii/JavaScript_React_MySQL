@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정규식 (Regular Expression)
+        // https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+        // 여기 참고하자
+
+        var patt = /World/i; //World - 패턴, i - modifier
+        var str ="Hello World! world!";
+        // i는 대소문자 구분
+        // g는 전체 다
+        console.log(str.search("World"));
+        console.log(str.search("world"));
+        console.log(str.search(/World/i));
+        console.log(str.search(/world/i));
+
+        console.log(str.replace("World", "Jeremy"));
+        console.log(str.replace("world", "Jeremy"));
+        console.log(str.replace(/world/ig, "Jeremy"));
+        
+        // 전체 문자 중 h a t 문자를 가지고 있는것을 다 찾는다
+        // 대괄호 안에 있는 문자는 다 찾는것!
+        var str ="IS this all there is";
+        var patt1 = /[hat]/g; //[abc]
+        var result = str.match(patt1);
+        console.log(result); //['t', 'h', 'a', 't', 'h']
+
+
+        // [0-9]
+        var str = "123asbsv48953kkkk";
+        var patt1 = /[0-9]/g;
+        var result = str.match(patt1);
+        console.log(result); //['1', '2', '3', '4', '8', '9', '5', '3']
+
+        // (red|green)
+        var str = "re, green, red, gree, gen, gen, red,blue, yellow";
+        var patt1=/(red|green)/g;
+        var result = str.match(patt1);
+        console.log(result); //['green', 'red', 'red']
+
+
+        // \d 숫자 [0-9]
+        var str = "Give 100";
+        var patt1 = /\d/g;
+        var result = str.match(patt1);
+        console.log(result); // ['1', '0', '0']
+
+
+        // \s 공백
+        var str = "Give 100";
+        var patt1 = /\s/g;
+        var result = str.match(patt1);
+        console.log(result); //[' ']
+
+        // \b   시작점이 LO인 것을 찾는다. 그래서 LOOK의 LO를 찾아 7이다.
+        var str = "HELLO, LOOK AT ME!";
+        var patt1 = /\bLO/g;
+        var result = str.match(patt1);
+        console.log(result);
+
+        // n+ 최소한 1개 이상
+        var str = "Helloooo";
+        var patt1 = /o+/g;
+        console.log(str.match(patt1)); //['oooo']
+
+        // n* 0 혹은 n 개
+        var str = "Helloooloooodoooo";
+        var patt1 = /lo*/g;
+        console.log(str.match(patt1)); //['l', 'looo', 'loooo']
+
+        // n? 0개 이거나 1개
+        var str = "1, 100 or 1000";
+        var patt1 = /10?/g;
+        console.log(str.match(patt1)); //['1', '10', '10']
+
+        // 우편번호 5자리
+        // 53452
+        // ^ 숫자로 시작
+        // \d{5}  는 갯수
+        // $   5자로 끝남로 끝냄
+        var patt1 = /^\d{5}$/;
+        var postalcode = "53452";
+        console.log(patt1.test(postalcode));
+
+        // 전화번호
+        // ^(010)    010으로 시작
+        // \d{4}    숫자 4자리
+        // $       끝마침
+        var patt1 = /^(010)-\d{4}-\d{4}$/;
+        var tel = "010-2354-7546";
+        console.log(patt1.test(tel));
+
+
+        // 이메일주소
+        // \w      문자
+        // \w+         무조건 문자열로 시작
+        // ?       있을수도 없을수도 0개 이거나 1개
+        // *       있을수도 없을수도 0개 이거나 n개
+        // \.         . 가 반드시 와야함
+        // \w{2,3}      문자  2자리 또는 3자리일수도
+        var patt1 = /^\w+([\.-]?\w+)@\w+(\.\w{2,3})+$/;
+        console.log(patt1.test("soyeong.go@gmail.com")); //true
+        console.log(patt1.test(".go@gmail.com")); //false
+
+
+    </script>
+</body>
+</html>

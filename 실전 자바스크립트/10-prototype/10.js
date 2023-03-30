@@ -1,0 +1,10 @@
+const obj = {};
+const arr = [];
+const num = 123.456;
+const str = 'abc';
+console.log(Object.getPrototypeOf(obj) === Object.prototype);
+console.log(Object.getPrototypeOf(arr) === Array.prototype);
+console.log(Object.getPrototypeOf(num) === Number.prototype);
+console.log(Object.getPrototypeOf(str) === String.prototype);
+console.log(num.toFixed === Number.prototype.toFixed);
+console.log(num.toFixed());

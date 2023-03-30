@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 방법 1.    3-13.module.js 파일에, 앞에 export 없을때 정상적으로 작동 -->
+    <!-- <script src="/script/3-13.module.js"></script>
+    <script>
+        log("log로 메시지 출력");
+        error("error로 메시지 출력");
+    </script> -->
+
+    <!-- 방법 2.      export 추가 후 import 사용  -->
+    <!-- js 파일에서 모두 들고오기보다, 원하는것만 import해서 쓰면 훨씬 덜 무겁고 좋다, 에러도 덜함 -->
+    <script type="module">
+        import {log, error, PI} from "/script/3-13.module.js";
+        log(PI);
+        log("log로 메시지 출력");
+        error("error로 메시지 출력");
+    </script>
+    <script src="script/3-13.ref.js" type="module "></script>
+</body>
+</html>

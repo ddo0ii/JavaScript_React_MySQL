@@ -12,7 +12,7 @@
         //Promise
         // 서버 호출 해서 데이터를 받아오는 함수
         // 서버로부터 받아올때까지 데이터를 기다려주겠다는 약속
-        var url = "";
+        var url = "https://05a8efa5-4259-4059-ab91-db8f428c94c6.mock.pstmn.io/productList";
         var data = axios.get(url).then(function (response) {
             console.log(response.data);
             return response.data;
@@ -38,7 +38,7 @@
         async function calculateSum() {
             var data = await getData2(url);
             var total = 0;
-            for (var item of data) {
+            for (var item of data.products) {
                 total += item.price;
             }
             console.log(total);
@@ -49,7 +49,7 @@
 
         // var total = 0;
         // getData().then(function (data) {
-        //     for (var item of data) {
+        //     for (var item of data.products) {
         //         total += item.price;
         //     }
         //     console.log(total);

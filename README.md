@@ -1,4 +1,4 @@
-﻿# functional-javascript-01
+﻿# JavaScript_React_MySQL
 
 
 ## inflearn에서 '함수형 프로그래밍과 JavaScript ES6+' 강의를 수강하며 작성한 코드들이다.

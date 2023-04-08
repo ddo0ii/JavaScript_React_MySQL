@@ -10,6 +10,12 @@ class App extends Component {
       { id: 1, name: "김민준", phone: "010-0000-0002" },
       { id: 2, name: "김벨로퍼트", phone: "010-0000-0003" },
     ],
+    keyword: "",
+  };
+  handleChange = (e) => {
+    this.setState({
+      keyword: e.target.value,
+    });
   };
   // push가 아닌 concat으로 불변성을 지켜줘야한다
   // handleCreate = (data) => {
@@ -55,8 +61,15 @@ class App extends Component {
       <div>
         <PhoneForm onCreate={this.handleCreate} />
         {/* {JSON.stringify(this.state.information)} */}
+        <input
+          value={this.state.keyword}
+          onChange={this.handleChange}
+          placeholder="검색..."
+        />
         <PhoneInfoList
-          data={this.state.information}
+          data={this.state.information.filter(
+            (info) => info.name.indexOf(this.state.keyword) > -1
+          )}
           onRemove={this.handleRemove}
           onUpdate={this.handleUpdate}
         />

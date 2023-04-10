@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 function WidthPrinter() {
-  const [width, setWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const onResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", onResize);
-    return () => {
-      window.removeEventListener("resize", onResize);
-    };
-  }, []);
+  const width = useWindowWidth();
   return <div>{`width is ${width}`}</div>;
 }
 

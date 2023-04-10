@@ -1,13 +1,5 @@
-import UseEffectAPI from "./component/UseEffectAPI";
-import UseEffectEvent from "./component/UseEffectEvent";
-
 function App() {
-  return (
-    <div className="App">
-      <UseEffectEvent />
-      <UseEffectAPI />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useUser from "../hooks/useUser";
 
 function Profile({ userId }) {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    getUserApi(userId).then((data) => setUser(data));
-  }, [userId]);
+  const user = useUser(userId);
   return (
     <div>
       {!user && <p>사용자 정보를 가져오는 중...</p>}
@@ -16,16 +14,6 @@ function Profile({ userId }) {
       )}
     </div>
   );
-}
-
-const USER1 = { name: "mike", age: 23 };
-const USER2 = { name: "jane", age: 31 };
-function getUserApi(userId) {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(userId % 2 ? USER1 : USER2);
-    }, 500);
-  });
 }
 
 function UseEffectAPI() {

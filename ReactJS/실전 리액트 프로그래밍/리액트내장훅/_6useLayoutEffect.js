@@ -4,6 +4,7 @@ export default function App() {
   const [width, setWidth] = useState(200);
   const boxRef = useRef();
   // 브라우저가 화면을 그리기 전에 아래의 useLayoutEffect가 동기로 실행된다
+  // 렌더링 결과가 돔에 반영된 직후에 호출
   useLayoutEffect(() => {
     console.log(boxRef.current.getBoundingClientRect().width);
     if (width > 500) {

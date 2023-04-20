@@ -5,7 +5,7 @@ import {
   getAgeLimit,
   getShowLimit,
   getFriendsWithAgeLimit,
-  getFriendsWithAgeShowLimit
+  getFriendsWithAgeShowLimit,
 } from "../state/selector";
 import FriendList from "../component/FriendList";
 import NumberSelect from "../component/NumberSelect";
@@ -13,20 +13,16 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { MAX_AGE_LIMIT, MAX_SHOW_LIMIT } from "../common";
 
 export default function FriendMain() {
-  const [
-    ageLimit,
-    showLimit,
-    friendsWithAgeLimit,
-    friendsWithAgeShowLimit
-  ] = useSelector(
-    (state) => [
-      getAgeLimit(state),
-      getShowLimit(state),
-      getFriendsWithAgeLimit(state),
-      getFriendsWithAgeShowLimit(state)
-    ],
-    shallowEqual
-  );
+  const [ageLimit, showLimit, friendsWithAgeLimit, friendsWithAgeShowLimit] =
+    useSelector(
+      (state) => [
+        getAgeLimit(state),
+        getShowLimit(state),
+        getFriendsWithAgeLimit(state),
+        getFriendsWithAgeShowLimit(state),
+      ],
+      shallowEqual
+    );
   // 또는
   // const ageLimit = useSelector(getAgeLimit);
   // const showLimit = useSelector(getShowLimit);
